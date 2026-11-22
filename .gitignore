@@ -1,2 +1,11 @@
-/*.iml
-/TODO.md
+.idea/
+*.iml
+
+node_modules/
+dist/
+coverage/
+
+opencode*/
+
+TODO.md
+RETRO.md
