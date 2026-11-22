@@ -16,6 +16,7 @@
 - The pnpm workspace contains two apps: a React + Vite + TypeScript frontend in `apps/frontend` and a Node.js + Express backend in `apps/backend`. The stack is documented in `docs/adr/0002-technology-stack.md`.
 - Run `mise install` and `pnpm install` from the root. Dependencies stay in one shared `pnpm-lock.yaml`. Use `pnpm dev` to start both apps in parallel through pnpm, with no orchestrator package. The backend listens on port `3000`; Vite proxies `/api` to that port. Use `pnpm lint`, `pnpm test`, and `pnpm build` to check both apps, and `mise run check` to lint the OpenCode workflows. No environment variables are required.
 - The root `Dockerfile` builds a self-starting production container. The process reads `PORT` (default `3000`) and serves both the built frontend and `/api`. See `docs/adr/0003-production-container.md`.
+- Production runs on Render as `calendar-calls-387` (`srv-dc1d4u1ksfps738j54mg`). Pushes to `main` auto-deploy the root `Dockerfile`. Public URL and setup notes are in `README.md`; the dashboard is https://dashboard.render.com/web/srv-dc1d4u1ksfps738j54mg.
 - OpenCode runs from `/opencode` comments through `.github/workflows/opencode.yml`; its security exception is documented in `docs/adr/0001-opencode-via-github-actions.md`.
 - See `README.md` for setup, startup, and verification details; update it and this file when workflows change.
 
